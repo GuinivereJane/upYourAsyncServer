@@ -73,4 +73,5 @@ app.get('/actors', (ctx)=>{
 
 
 koa.use(app.routes());
+console.log("################" + process.env.PORT)
 koa.listen(process.env.PORT || 3000);
