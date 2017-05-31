@@ -9,6 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "7.7.3"
+  },
   "dependencies": {
     "babel-cli": "^6.24.1",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
