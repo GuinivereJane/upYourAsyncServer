@@ -1,11 +1,28 @@
-import Koa from 'koa';
-import Router from 'koa-router';
-import * as data from './data/data';
+const Koa  = require('koa');
+const Router = require('koa-router');
 
-var slow = require('koa-slow');
+const slow = require('koa-slow');
 
 const koa = new Koa();
 const app = new Router();
+
+ const muppets = [
+								{id:"1",name:"Kermit", actorId:"1"},
+								{id:"2",name:"Dr. Teeth", actorId:"1"},
+								{id:"3",name:"Rowlf", actorId:"1"},
+								{id:"4",name:"Waldrof", actorId:"1"},
+								{id:"5",name:"the Swedish Chef", actorId:"1"},
+								{id:"6",name:"Animal", actorId:"2"},
+								{id:"7",name:"Fozzie Bear", actorId:"2"},
+								{id:"8",name:"Miss Piggy", actorId:"2"},
+								{id:"9",name:"Sam the Eagle", actorId:"2"}							
+							];
+
+const actors = [
+												{id:"1",name:"Jim Henson"},
+												{id:"2",name:"Frank Oz"},
+											];
+
 
 // x-response-time
 
@@ -46,11 +63,11 @@ app.get('/hello/:name', async (ctx) => {
 
 
 app.get('/muppets', (ctx)=>{
-	ctx.body = JSON.stringify(data.muppets);
+	ctx.body = JSON.stringify(muppets);
 })
 
 app.get('/actors', (ctx)=>{
-	ctx.body = JSON.stringify(data.actors);
+	ctx.body = JSON.stringify(actors);
 })
 
 
