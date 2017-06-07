@@ -1,5 +1,6 @@
 const Koa  = require('koa');
 const Router = require('koa-router');
+var cors = require('koa-cors');
 
 const slow = require('koa-slow');
 
@@ -44,6 +45,7 @@ const actors = [
 
 // });
 
+app.use(cors());
 
 app.use(slow({
     url: /muppets/i,
